@@ -5,7 +5,7 @@ public class Main {
 		TPipeline pipeline = new TPipeline();
 		pipeline.addFirst(new TestHandler2());
 		pipeline.addFirst(new TestHandler1());
-		for(int i=1;i<=3;i++){
+		for(int i=1;i<=10;i++){
 			pipeline.Request("Hello"+i);
 		}
 		

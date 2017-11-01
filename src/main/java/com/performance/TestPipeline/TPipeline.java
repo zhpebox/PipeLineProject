@@ -1,6 +1,5 @@
 package com.performance.TestPipeline;
 
-import javax.jws.HandlerChain;
 
 public class TPipeline {
 	private THandlerContext head;
@@ -22,6 +21,8 @@ public class TPipeline {
 	public void Request(Object msg){
 		head.doWork(msg);
 	}
+	
+	/*配置链表尾部*/
 	
 	//这是一个内部类，为默认handler的context
 	final class THeadContext extends THandlerContext{

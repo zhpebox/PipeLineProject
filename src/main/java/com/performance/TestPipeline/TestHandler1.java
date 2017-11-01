@@ -14,7 +14,7 @@ public class TestHandler1 implements THandlerInter {
 		String result = (String)msg+"-handler1";
 		System.out.println(result);
 		//写入操作，这个操作是必须的，相当于将结果传递给下一个handler
-		ctx.write(result);
+		ctx.setData2NextContext(result);
 
 	}
 

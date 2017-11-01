@@ -1,6 +1,5 @@
 package com.performance.TestPipeline;
 
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -40,7 +39,7 @@ public class THandlerContext {
 	
 	//这里wirte操作是给handler调用的，实际上是一个回调方法，当handler处理完数据之后，调用一下
 	//nextcontext.write,此时就吧任务传递给下一个handler了
-	public void write(Object msg){
+	public void setData2NextContext(Object msg){
 		doWork(msg);
 	}
 	
