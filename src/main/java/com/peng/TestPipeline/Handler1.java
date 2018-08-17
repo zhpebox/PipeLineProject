@@ -9,14 +9,19 @@ public class Handler1 implements SHandlerInter {
 	
 	@Override
 	public void doWork(SContext next, Object data) {
-		execute.submit(new Runnable() {
-			@Override
-			public void run() {
-				String s = (String)data + "_handler1";
-				next.sendDataNext(s);
-				System.out.println(s);
-			}
-		});
+//		execute.submit(new Runnable() {
+//			@Override
+//			public void run() {
+//				String s = (String)data + "_handler1";
+//				next.sendDataNext(s);
+//				System.out.println(s);
+//			}
+//		});
+		execute.submit(() -> {
+            String s = (String)data + "_handler1";
+            next.sendDataNext(s);
+            System.out.println(s);
+        });
 	}
 
 }
